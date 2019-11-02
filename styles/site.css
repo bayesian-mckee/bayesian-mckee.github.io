@@ -4,12 +4,15 @@
    programmer:  Bruce McKee
    course:      Info Sci 1300, Fall 2019
 */
+
 /* Complementary colors chosen by sampling  the red of  https://www.mccloudchamber.com/mccloudpastevents/2015/10/17/apple-harvest-festival
 https://www.sessions.edu/color-calculator/, and choosing a split complmentary color
   red was #b12b30
   teal blue: #2bb1a8
   apple green:  #72b12b
-  */
+  Unfortunately, combining these colors does not produce sufficient contrast, so
+  went with red and white as the primary theme, with the apple green saved for link click styling*/
+
 /**********************************************************************************************/
 /*  Element and class stylings are grouped to reflect how they are applied in the .HTML files */
 /**********************************************************************************************/
@@ -267,6 +270,28 @@ footer p {
 /*=============================================================================*/
 /*        END of Main page content classes and element Styling                 */
 /*=============================================================================*/
+
+
+/*****************************************************************************/
+/***  Classes used to format schedules and vendor li                       ***/
+/*****************************************************************************/
+
+.booth_list a {
+  font-style: italic;
+  font-weight: bold;
+  color: #b12b30;
+  background-color: white;
+}
+
+.booth_list ul li {
+  padding:10px;
+}
+
+.schedule_container pre {
+  font-family: monospace;
+  font-size: 1vw;
+}
+
 /*****************************************************************************/
 /***  Classes used to format the map page                                  ***/
 /*****************************************************************************/
@@ -287,6 +312,11 @@ img.map-row-container {
   max-width: 100%;
   height: auto;
   overflow: scroll;
+}
+
+.map-row-container figcaption{
+  font-weight:bold;
+  font-size:2vw;
 }
 
 cite {
@@ -334,6 +364,12 @@ cite {
     font-family: monospace;
     font-size: 3.5vw;
   }
+
+  .schedule_container pre {
+    font-family: monospace;
+    font-size: 3.5vw;
+  }
+
 }
 
 @media screen and (min-width:600px) and (max-width:900px) {
