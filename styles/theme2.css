@@ -1,0 +1,70 @@
+/* CSS Style File #1 for Info Sci 1300 Project #1, theme #2*/
+
+
+/* Base theme for text will be a white background with black letters - for easiest reading */
+body{ font-style:normal;
+      font-weight:bolder;
+      font-family:serif;
+      font-style:italic;
+      background-color:#D9D9D6; /*** Pure white ***/
+      /*background-image:url("../images/woman-with-yellow-hair-picasso.jpg")*/
+      /*--source: https://www.guggenheim.org/arts-curriculum/topic/pablo-picasso-woman-with-yellow-hair*/
+    }
+
+    nav li a{
+        color: #008BCC;
+        background-color:#ffffff;
+        font-style: normal;
+        font-weight:bolder;
+        font-family:serif;
+        background-color:#D9D9D6;
+    }
+
+    nav ul li {
+        margin:5px;
+
+    }
+    h1 {
+      color: #000000;
+      font-weight: bolder;
+      font-variant: small-caps;
+      font-family:serif;
+    }
+
+    h2  {
+      color:  #000000;
+      font-family: sans-serif;
+      font-weight: bolder ;
+
+    }
+
+    /*--Use yellow to highlight the warning, and a bold, stylized font to draw attention
+    */
+    p {
+      color: black;
+    }
+
+    li {
+      color: #000000;
+      font-style: normal;
+      margin:10px;
+
+    }
+
+
+   em {
+      font-style: normal; /* removes italics */
+      font-weight: bold; /* adds bold */
+      background-color: yellow;
+      font-style: italic;
+      text-decoration:underline;
+    }
+
+    img{
+      border:2px solid #008BCC ;
+      padding: 2px;
+      display:inline-block;
+      /*  Technique for placing image borders is from: https://css-tricks.com/using-css-for-image-borders/ */
+      }
+
+    /*** Special Classes ***/

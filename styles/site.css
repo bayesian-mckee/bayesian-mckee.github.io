@@ -1,0 +1,343 @@
+/* CSS Style File #1 for Info Sci 1300 Project #2, final version
+   website topic:  Ithaca Apple Harvest Festival
+   filename:    site.css
+   programmer:  Bruce McKee
+   course:      Info Sci 1300, Fall 2019
+*/
+/* Complementary colors chosen by sampling  the red of  https://www.mccloudchamber.com/mccloudpastevents/2015/10/17/apple-harvest-festival
+https://www.sessions.edu/color-calculator/, and choosing a split complmentary color
+  red was #b12b30
+  teal blue: #2bb1a8
+  apple green:  #72b12b
+  */
+/**********************************************************************************************/
+/*  Element and class stylings are grouped to reflect how they are applied in the .HTML files */
+/**********************************************************************************************/
+/* The body defaults are:
+       - pure white background with black text
+       - 100% width (will take up available screen)
+*/
+body {
+  font-family: sans-sans-serif;
+  font-size: 100%;
+  background-color: #ffffff;
+}
+
+/*=============================================================================*/
+/*        Header  Styling and classes                                         */
+/*=============================================================================*/
+/* for the logo img, max-height: 200px prevents the logo from growing as you expand the window
+*/
+.header-container header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  font-family: sans-serif;
+  background-color: #b12b30;
+  color: white;
+}
+
+.header-container figure {
+  display: block;
+  text-align: center;
+}
+
+.header-container a {
+  color: black;
+}
+
+.header-container p {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.header-container ul {
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.header-container ul li {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.left-header {
+  flex-grow: 1;
+}
+
+.left-header img {
+  max-height: 200px;
+}
+
+.center-header {
+  flex-grow: 3;
+  min-width: 300px;
+  margin-top: 50px;
+  font-size: 2vw;
+}
+
+.center-header ul li {
+  font-family: monospace;
+  font-size: 2vw;
+}
+
+.center-header a {
+  font-style: italic;
+  font-weight: bold;
+  color: #b12b30;
+  ;
+  background-color: white;
+}
+
+.hours_container p {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  font-family: monospace;
+  font-size: 2.5vw;
+}
+
+.hours_container ul {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-family: monospace;
+  font-size: 2vw;
+}
+
+.hours_container ul li {
+  margin-top: 0px;
+  padding-top: 10px;
+  font-family: monospace;
+  font-size: 2vw;
+}
+
+.hours_container pre {
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: monospace;
+  font-size: 2.1vw;
+}
+
+.right-header {
+  flex-grow: 1;
+}
+
+/*** max-height This prevents the logo from growing as you expand the window ***/
+.right-header img {
+  max-height: 200px;
+}
+
+/*=============================================================================*/
+/*  END of Header  Styling and classes                                         */
+/*=============================================================================*/
+/*=============================================================================*/
+/*        Nav Bar classes and element Styling                                 */
+/*=============================================================================*/
+/*
+ ***  Base theme for the navigation bar - a horizontal bar that can wrap
+ ***  and with underlines and list bullets removed.  In addition, define
+ ***  hover and activate colors so that the nav bar links invert colors when hovering,
+ ***  and the link background color changes & fonts go somewhat larger on clicks
+
+/***  Configure  Nav bar links  so that they change color when the mouse passes over */
+/***  them, and when clicked, the links get larger and the text size changes         */
+/*************************************************************************************/
+.nav_bar_container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+/*
+- list-style-type:none; removes the bullets -This tip from: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type
+*/
+nav ul li {
+  margin: 5px;
+  padding: 10px;
+  list-style-type: none;
+  flex-grow: 1;
+  margin: 0;
+  border: 1px solid #b12b30;
+}
+
+nav li a {
+  color: #b12b30;
+  background-color: #ffffff;
+  font-style: normal;
+  font-weight: bolder;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-align: left;
+  background-clip: padding-box;
+}
+
+nav li:hover {
+  color: #ffffff;
+  background-color: #b12b30;
+  border: 1px solid #555;
+  text-decoration: none;
+}
+
+nav li:active {
+  color: #b12b30;
+  background-color: #72b12b;
+}
+
+/*=============================================================================*/
+/*  End of Nav Bar classes and element Styling                                 */
+/*=============================================================================*/
+/*=============================================================================*/
+/*        Main page content classes and element Styling                       */
+/*=============================================================================*/
+/* h1 text will be white letters on red backgrounds, centered on the page */
+.main_container {
+  font-family: sans-serif;
+}
+
+.page_title h1 {
+  display: block;
+  color: white;
+  background-color: #b12b30;
+  font-weight: bold;
+  font-size: 35px;
+  font-variant: small-caps;
+  width: 50%;
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  text-shadow:
+    /*** puts a black outline on the text ***
+                                    Source Kyle Harms' lab04, layout1 style.css file **/
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+/* Will be black on white */
+.main_container h2 {
+  color: #000000;
+  font-weight: bolder;
+}
+
+.article {
+  background: white;
+  text-align: left;
+  height: 1200px;
+  font-size: 20px;
+}
+
+/* Style the em element so that the background is post-it-note yellow */
+/*  font-style:normal; removes italics */
+em {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #FFFF99;
+}
+
+/* Put a red border around each images
+  This Technique for styling image borders is from: https://css-tricks.com/using-css-for-image-borders/
+*/
+img {
+  border: 5px solid #b12b30;
+  display: inline-block;
+  padding: 2px;
+  max-height: 300px;
+  margin: 0px;
+}
+
+main {
+  padding-left: 20px;
+  border-left: 1px solid #b12b30;
+}
+
+footer p {
+  color: gray;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/*=============================================================================*/
+/*        END of Main page content classes and element Styling                 */
+/*=============================================================================*/
+/*****************************************************************************/
+/***  Classes used to format the map page                                  ***/
+/*****************************************************************************/
+img.map-row-container {
+  max-width: 100%;
+  height: auto;
+}
+
+.map-row-container img {
+  display: inline-block;
+  max-width: 800px;
+  max-height: 800px
+}
+
+.map-row-child {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+  overflow: scroll;
+}
+
+cite {
+  color: #808080;
+  font-weight: lighter;
+}
+
+/*****************************************************************************/
+/***  Media queries that enable a responsive website                       ***/
+/*****************************************************************************/
+@media screen and (max-width: 599px) {
+
+  /* Have to boost text size relative to the screen */
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  nav ul li {
+    flex: 100%;
+    font-size: 4.0vw;
+  }
+
+  .right-header {
+    display: none;
+  }
+
+  .left-header {
+    display: none;
+  }
+
+  .center-header p {
+    font-size: 3.5vw;
+  }
+
+  .hours_container ul li {
+    font-family: monospace;
+    font-size: 3.5vw;
+  }
+
+  .hours_container pre {
+    font-family: monospace;
+    font-size: 3.5vw;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:900px) {
+  .right-header {
+    display: none;
+  }
+}

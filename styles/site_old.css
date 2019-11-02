@@ -1,0 +1,198 @@
+/* CSS Style File #1 for Info Sci 1300 Project #1, theme #1
+   website topic:  Finger Lakes Chronic Fatigue Support Group
+   filename:    theme1.css
+   programmer:  Bruce McKee
+   course:      Info Sci 1300, Fall 2019
+*/
+/***********************************************/
+/*** CSS Styling for standard HTML elements ***/
+/**********************************************/
+
+/*** The body will have a white background, and will default to black letters ***/
+body {
+  font-style: normal;
+  font-weight: normal;
+  font-family: sans-serif;
+  background-color: #ffffff;    /*** Pure white ***/
+  color:#000000;
+}
+
+/* h1 text will be white letters on red  backgrounds, centered on the page */
+h1 {
+  color: white;
+  background-color: #A13030;
+  font-weight: bolder;
+  font-size: 35px;
+  font-variant: small-caps;
+  font-family: serif;
+  text-align: center;
+  text-shadow:
+    /*** puts a black outline on the text ***
+                                  Source Kyle Harms' lab04, layout1 style.css file **/
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+h2 {
+  color: #000000;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+
+/*
+ *** Base theme for the navigation bar - a horizontal bar that can wrap
+ *** and with underlines and list bullets removed.  In addition, define
+ *** hover and activate colors so that the nav bar links invert colors when hovering,
+ *** and the link background color changes & fonts go somewhat larger on clicks
+ **********************************************************************************************/
+
+/*Define a vertical bar that can wrap on browser resizing */
+nav {
+  display:flex;
+  flex-direction:row;
+  flex-basis:auto;
+}
+
+/* Nav bar link styling - set so that there are no underlines */
+nav li a {
+  color: #A13030;
+  background-color: #ffffff;
+  font-style: normal;
+  font-weight: bolder;
+  font-family: sans-serif;
+  font-size: 125%;
+  text-decoration: none;     /* This removes the link underlines*/
+  text-align: left;
+}
+
+/* Configure so that the Nav links change color when the mouse passes over them */
+nav li a:hover {
+  color: #ffffff;
+  background-color: #A13030;
+  border: 1px solid #555;
+  /*text-align:inherit;*/
+}
+
+/* Configure so that the Nav links change color and get bigger when you click the link*/
+nav li a:active {
+  color: #A13030;
+  font-size: 120%;
+  background-color: #FFFF99;
+  /* The approximate color of a post-it note */
+}
+
+nav ul li {
+  margin: 5px;
+  padding: 10px;
+  list-style-type: none;  /* removes the bullets - This tip from: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type */
+  display: block;
+  margin: 25px 5px 5px 5px;
+}
+
+
+/* Black body text is easiest to read on a white background */
+p {
+  color: black;
+}
+
+li {
+  color: black;
+  font-style: normal;
+  margin: 10px;
+}
+
+/* Style the em element so that the background is post-it-note mild yellow */
+em {
+  font-style: normal;
+  /* removes italics */
+  font-weight: bold;
+  /* adds bold */
+  background-color: #FFFF99;
+  /* post-it note yellow */
+}
+
+/* Put a blue border around each images
+  This Technique for styling image borders is from: https://css-tricks.com/using-css-for-image-borders/
+*/
+img {
+  border: 5px solid #A13030;
+  display: inline-block;
+  padding: 2px;
+  max-height: 300px;
+  margin: 0px;
+}
+
+main {
+  padding-left: 20px;
+  border-left: 1px solid #A13030;
+}
+
+footer p {
+  color: gray;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/*******************************
+ *** CSS Styling for classes ***
+ *******************************/
+/*** Styling for nav-bar text ***/
+.cursive_nav {
+  color: white;
+  background-color: #cc4400;
+  font-style: italic;
+  /*padding: 4px;*/
+}
+
+
+
+/*** Classes specific to the navbar container and its contents ***/
+.navbar_and_main_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav_bar_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main_container {}
+
+.article {
+  background: white;
+  flex-grow: 9;
+  text-align: left;
+  height: 1200px;
+}
+
+
+/*****************************************************************************/
+/***  Classes used to format the page header                               ***/
+/*****************************************************************************/
+ header{
+    display:flex;
+    flex-direction: row;
+    font-weight:bolder;
+  }
+
+
+cite{
+   color:#808080;
+   font-weight:lighter;
+}
+
+
+/*****************************************************************************/
+/***  Media queries that enable a responsive                               ***/
+/*****************************************************************************/
+@media (max-width: 599px) {
+
+
+}
+
+@media (min-width:600px) and (max-width:900px) {
+
+}
