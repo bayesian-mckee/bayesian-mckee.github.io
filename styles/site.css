@@ -210,7 +210,7 @@ nav li:active {
   background-color: #b12b30;
   font-weight: bold;
   font-size: 35px;
-  font-variant: small-caps;
+  font-family:sans-serif;
   width: 50%;
   margin: 0px auto;
   padding: 10px;
