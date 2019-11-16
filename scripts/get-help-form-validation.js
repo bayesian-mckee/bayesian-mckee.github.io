@@ -49,31 +49,38 @@ $(document).ready(function() {
     console.log("helpTextArea selected");
   })
 
+
+
   // Explanation of the difference between . and # in the jquery
   // . selects all classes labeled with .userEmail_error
   // # selects the one and only element with that // IDEA:
   // BUT, if id elements are not unique, it only gets the first one.
   // When user selects e-mail option
+
+
   $("#contactByEmail").on("input", function() {
     console.log("contactByEmail selected");
     $("#userPhoneNumber").addClass("hidden");
     $("#userPhoneNumberLabel").addClass("hidden");
     $("#userPhoneNumber_error").addClass("hidden");
-    $("#userEmail").attr("required", false);
+    $("#userPhoneNumber").attr("required", false);
+
 
     $("#userEmail").removeClass("hidden");
     $("#userEmailLabel").removeClass("hidden");
     $("#userEmail_error").addClass("hidden");
     $("#userEmail").attr("required", true);
-
+    radioEmailSelected  = true;
   })
 
-/*  $("#credit").on("input",function() {
-    console.log("credit selected");
-    $("#credit_num").removeClass("hidden");
-    $("#credit_num").attr("required",true);
-  })
-*/
+  /*  $("#credit").on("input",function() {
+      console.log("credit selected");
+      $("#credit_num").removeClass("hidden");
+      $("#credit_num").attr("required",true);
+
+    })
+  */
+
 
   // When user selects text message number
   $("#contactByPhoneNumber").on("input", function() {
@@ -81,34 +88,25 @@ $(document).ready(function() {
     $("#userEmail").addClass("hidden");
     $("#userEmailLabel").addClass("hidden");
     $("#userEmail_error").addClass("hidden");
-    $("#userEmail").attr("required",false)
+    $("#userEmail").attr("required", false)
 
     $("#userPhoneNumber").removeClass("hidden");
     $("#userPhoneNumberLabel").removeClass("hidden");
     $("#userPhoneNumber_error").addClass("hidden");
     $("#userPhoneNumber").attr("required", true);
-
+    radioTextMessageSelected = true;
   })
   //*****************************************************************************
   // Form validation code  when user submits form
   //*****************************************************************************
 
   $("#get-help-form").on("submit", function() {
-
     // Assume that the form input is valid.
     var valid = true;
-    // Now cycle through every form field
-
-    // Check the user name - this is optional, so just
-    // Remind the user to add something if there was another error.
-
-    if ($("#userName").prop("validity").valid) {
-      $("#userName_error").addClass("hidden");
-    } else {
-      $("#userName_error").removeClass("hidden");
-      //$(".whatever").addClass("hidden");//
-      valid = false;
-    };
+    var emailValid = true;
+    var phoneNumberValid = true;
+    var textAreaValid = true;
+    // Now cycle through every REQUIRED form field
 
     //*
     // Check the userEmail entry
@@ -118,28 +116,39 @@ $(document).ready(function() {
 
     } else {
       $("#userEmail_error").removeClass("hidden");
-      $("#userPhoneNumber_error").addClass("hidden");
-      valid = false;
+      emailValid = false;
       //$(".whatever").addClass("hidden");//
     };
 
     // Check the userPhoneNumber entry
+if (!$("#userEmail").prop("validity").valid) {
     if ($("#userPhoneNumber").prop("validity").valid) {
       $("#userPhoneNumber_error").addClass("hidden");
-      $("#userEmail_error").addClass("hidden");
     } else {
-      $("#userPhoneNumber_error").addClass("hidden");
-      $("#userEmail_error").addClass("hidden");
-      valid = false;
+      $("#userPhoneNumber_error").removeClass("hidden");
+      phoneNumberValid = false;
     };
-
-    if ($("#helpTextArea").prop("validity").valid) {
+}
+    if ($("#helpTextArea").prop("validity").valid){
       $("#helpTextArea_error").addClass("hidden");
     } else {
       $("#helpTextArea_error").removeClass("hidden");
-      valid = false;
+      textAreaValid = false;
     };
+
+    if ((emailValid || phoneNumberValid) && textAreaValid) {
+      valid = true;
+    } else {
+      valid = false;
+    }
+
+    if (valid) {
+      $("#submit_error").addClass("hidden");
+    } else {
+      $("#submit_error").removeClass("hidden");
+    }
     // Tell the browser whether the form is valid (sent form data to server).
+
     return valid;
 
   }); // End of Validation
