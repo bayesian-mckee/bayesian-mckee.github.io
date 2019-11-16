@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<!--    index.html file for the Ithaca Apple Harvest Festival
+coder: Bruce Mckee)-->
+<html>
+
+<head>
+  <title> Ithaca Apple Harvest Festival</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="styles/site.css" media="all" />
+  <script src="scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <script src="scripts/get-help-form-validation.js" type="text/javascript"> </script>
+</head>
+
+<body>
+  <div class="header-container">
+    <header>
+      <!-- Source: https://www.mccloudchamber.com/mccloudpastevents/2015/10/17/apple-harvest-festival-->
+      <div class="left-header">
+        <figure>
+          <img src="images/mccloud-chamber-of-commerce-apple-harvest-logo.jpg" alt="Ithaca Apple Harvest Festival logo">
+          <figcaption>
+            Source: <cite><a href="https://www.mccloudchamber.com/mccloudpastevents/2015/10/17/apple-harvest-festival">McCloud COC</a></cite>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="center-header">
+        <p> 37th Annual Ithaca Apple Harvest Festival<p>
+            <p> Location: <a href="https://www.visitithaca.com/attractions/downtown-ithaca-commons"> The Ithaca Commons</a>
+              <p>
+                <p> Downtown Ithaca, NY</p>
+                <div class="hours_container">
+                  <p>Hours:</p>
+                  <ul>
+                    <li>
+                      <pre>Friday,   Sep 27:  Noon to 6PM </pre>
+                    </li>
+                    <li>
+                      <pre>Saturday, Sep 28:  10AM to 6PM </pre>
+                    </li>
+                    <li>
+                      <pre>Sunday,   Sep 29:  10AM to 6PM </pre>
+                    </li>
+                  </ul>
+                </div>
+      </div>
+      <div class="right-header">
+        <figure>
+          <img src="images/mccloud-chamber-of-commerce-apple-harvest-logo.jpg" alt="Ithaca Apple Harvest Festival logo">
+          <figcaption>
+            Source: <cite><a href="https://www.mccloudchamber.com/mccloudpastevents/2015/10/17/apple-harvest-festival">McCloud COC</a></cite>
+          </figcaption>
+        </figure>
+      </div>
+    </header>
+  </div>
+  <hr />
+
+  <!-- Style the nav bar and the article sections via a row flexbox.  The nav bar will have its own column flexbox-->
+
+  <div class="nav_bar_container">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="food-and-cider.html#food">Food &amp; Cider</a></li>
+        <li><a href="crafts.html#crafts">Crafts</a></li>
+        <li><a href="first-peoples-festival.html#first">First People's Festival</a></li>
+        <li><a href="free-family-fun-zone.html#fun">Free Family Fun Zone</a></li>
+        <li><a href="farmers-showcase.html#farmers">Farmer's Showcase</a></li>
+        <li><a href="music.html#music">Music</a></li>
+        <li><a href="map.html#map">Festival Street Map</a></li>
+        <li class="li-get-help"><a href="get-help.html#help" >Get Help</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <hr />
+  <main class="main_container">
+    <div class="page_title">
+      <h1 id="help">Get Help</h1>
+    </div>
+    <!--Set up the "Get Help" form -->
+      <!-- Turn off automatic validations so that we can substitute our own validation -->
+      <!-- Because we are dealing with e-mail addresses & phone #s, the submission should be post -->
+
+
+      <form id="get-help-form" method="post" action="https://www.cs.cornell.edu/courses/cs1300/2019fa/submit.php" novalidate>
+
+        <div  class="get-help-form-element">
+          <div id="get-help-form-top-text">
+            <p>Please fill out & submit the form below</p>
+            <p>We will answer you within five minutes (8AM-6PM)</p>
+            <p>(Yes, we are that good!)</p>
+          </div>
+          <fieldset id="get-help-form-contact-fieldset" class="get-help-form-element">
+            <!-- the fieldset element groups controls -->
+            <!--  Use this technique to add the "required" <fieldset>
+            https://paulund.co.uk/add-required-asterisk-with-css
+          </fieldset>
+          https://css-tricks.com/almanac/selectors/r/required/
+          -->
+            <legend>Contact Information:</legend>
+
+            <div class="contact-form-element">
+              <label for="userName">Name:</label><span class="optional">(optional)</span>
+              <input id="userName" type="text" name="userName" />
+            </div>
+
+            <div class="contact-form-element">
+              <label for="userAge">Age:</label><span class="optional">(optional)</span>
+              <input id="userAge" type="number" min="18" max="100" placeholder="18" name="userAge" />
+            </div>
+
+            <div class="contact-form-element">
+              <label>Contact Method</label>
+            </div>
+            <div class="contact-form-element">
+              <div class="flex radio">
+                <input type="radio" id="contactByEmail" name="contactMethod" value="Email" checked>
+                <label for="contactByEmail">Email</label>
+
+                <input type="radio" id="contactByPhoneNumber" name="contactMethod" value="Text Message">
+                <label for="contactByPhoneNumber">Text Message</label>
+              </div>
+            </div>
+
+            <div class="contact-form-element ">
+
+              <label for="userEmail" id="userEmailLabel" class="field-required">E-Mail (required):</label>
+              <input id="userEmail" type="email" name="userEmail" required />
+              <span class="error_message hidden" id="userEmail_error">Please enter an e-mail address</span>
+
+              <label for="userPhoneNumber" id="userPhoneNumberLabel" class="field-required hidden">Phone # (required):</label>
+
+              <input id="userPhoneNumber" type="tel" class="hidden" name="userPhoneNumber" required />
+              <span class="error_message hidden" id="userPhoneNumber_error">Please enter a valid phone number</span>
+            </div>
+          </fieldset>
+        </div>
+
+        <fieldset id="get-help-form-helpyou-fieldset" class="get-help-form-element">
+          <!-- the fieldset element groups controls -->
+          <legend>How can we help you?</legend>
+          <!--  to put the labels to right of checkbox, create checkbox first-->
+          <fieldset id="get-help-form-helpyou-checklist-fieldset" class="help_you_element">
+            <legend> Help topics - check all that apply (optional):</legend>
+
+            <div class="checklist-element">
+              <input id="busCheckbox" type="checkbox" name="bus" />
+              <label for="busCheckbox">TCAT Bus Routes</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="childrensCheckbox" type="checkbox" name="childrens" />
+              <label for="childrensCheckbox">Children's Event</label>
+            </div>
+            <div class="checklist-element">
+              <input id="directionsCheckbox" type="checkbox" name="directions" />
+              <label for="directionsCheckbox">Directions</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="craftVendors" type="checkbox" name="craftVendors" />
+              <label for="craftVendors">Craft Vendors</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="dogPolicyCheckbox" type="checkbox" name="dogPolicy" />
+              <label for="dogPolicyCheckbox">Dog Policy</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="farmersShowcaseCheckbox" type="checkbox" name="farmersShowcase" />
+              <label for="farmersShowcaseCheckbox">Farmer's Showcase</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="firstPeoplesCheckbox" type="checkbox" name="firstPeoples" />
+              <label for="firstPeoplesCheckbox">First People's Festival</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="foodAndBeverageCheckbox" type="checkbox" name="foodAndBeverage" />
+              <label for="foodAndBeverageCheckbox">Food &amp; Beverage Vendors</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="musicCheckbox" type="checkbox" name="music" />
+              <label for="musicCheckbox">Music</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="parkingCheckbox" type="checkbox" name="parking" />
+              <label for="parkingCheckbox">Parking</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="performanceCheckbox" type="checkbox" name="performance" />
+              <label for="performanceCheckbox">Performances</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="restroomsCheckbox" type="checkbox" name="restrooms" />
+              <label for="restroomsCheckbox">Restrooms/Porta-Potties</label>
+            </div>
+
+            <div class="checklist-element">
+              <input id="otherCheckbox" type="checkbox" name="other" />
+              <label for="otherCheckbox">OTHER</label>
+            </div>
+
+          </fieldset>
+
+          <fieldset id="get-help-form-helpyou-questionbox-fieldset" class="help_you_element">
+            <legend class="field-required">Type in a question (required)</legend>
+            <!-- <label for="helpTextArea">Please type in your questions:</label><span class="required">*required</span> <span class="error_message hidden" id="helpTextArea_error">Please type in a question</span> */ -->
+
+            <textarea id="helpTextArea" cols="50" rows="5" wrap="soft" name="helpTextArea" minlength="5" maxlength="250" class="field-required" required></textarea>
+            <span id="helpTextArea_error" class="error_message hidden">Please type in a question:</span>
+          </fieldset>
+
+        </fieldset>
+        <div id="button_and_form_error_message">
+        <button type="submit">Submit</button>
+        <span id="submit_error" class="error_message hidden">One or more required fields have errors - please fix & Submit again</span>
+        </div>
+      </form>
+
+
+    <hr />
+
+    <footer>
+      <p>Copyright &copy; 2019 <a href="https://www.downtownithaca.com/">Downtown Ithaca Alliance</a></p>
+      <!--    <p>We give special thanks to the Festival Title Sponsor <a href="https://www.tompkinstrust.com/Tompkins">Tompkins Trust Company</a> </p> -->
+    </footer>
+  </main>
+
+
+
+  <hr />
+
+</body>
+
+</html>

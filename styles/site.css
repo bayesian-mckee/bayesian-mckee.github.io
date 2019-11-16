@@ -4,7 +4,6 @@
    programmer:  Bruce McKee
    course:      Info Sci 1300, Fall 2019
 */
-
 /* Complementary colors chosen by sampling  the red of  https://www.mccloudchamber.com/mccloudpastevents/2015/10/17/apple-harvest-festival
 https://www.sessions.edu/color-calculator/, and choosing a split complmentary color
   red was #b12b30
@@ -12,7 +11,6 @@ https://www.sessions.edu/color-calculator/, and choosing a split complmentary co
   apple green:  #72b12b
   Unfortunately, combining these colors does not produce sufficient contrast, so
   went with red and white as the primary theme, with the apple green saved for link click styling*/
-
 /**********************************************************************************************/
 /*  Element and class stylings are grouped to reflect how they are applied in the .HTML files */
 /**********************************************************************************************/
@@ -210,7 +208,7 @@ nav li:active {
   background-color: #b12b30;
   font-weight: bold;
   font-size: 35px;
-  font-family:sans-serif;
+  font-family: sans-serif;
   width: 50%;
   margin: 0px auto;
   padding: 10px;
@@ -270,12 +268,9 @@ footer p {
 /*=============================================================================*/
 /*        END of Main page content classes and element Styling                 */
 /*=============================================================================*/
-
-
 /*****************************************************************************/
 /***  Classes used to format schedules and vendor li                       ***/
 /*****************************************************************************/
-
 .booth_list a {
   font-style: italic;
   font-weight: bold;
@@ -284,7 +279,7 @@ footer p {
 }
 
 .booth_list ul li {
-  padding:10px;
+  padding: 10px;
 }
 
 .schedule_container pre {
@@ -314,9 +309,9 @@ img.map-row-container {
   overflow: scroll;
 }
 
-.map-row-container figcaption{
-  font-weight:bold;
-  font-size:2vw;
+.map-row-container figcaption {
+  font-weight: bold;
+  font-size: 2vw;
 }
 
 cite {
@@ -325,8 +320,138 @@ cite {
 }
 
 /*****************************************************************************/
+/***  jQery-manipulated Styles From Dr. Harms' Lab10 coffee.css file       ***/
+/*****************************************************************************/
+
+/** Order is important!  if you placed .hidden before
+    .error_message, the error message would show on page loading
+**/
+
+.error_message {
+  display: inline-block;
+  padding-left: 5px;
+  border-left: 1px red solid;
+  font-size: 14px;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/******************************************************************************/
+/**  Form Styling specific to desktop
+/******************************************************************************/
+.li-get-help{
+  font-weight:bold;
+  background-color: white;
+  color:#b12b30 ;
+  text-transform:uppercase;
+  margin:0px;
+  padding:5px;
+}
+
+legend{
+  color:black;
+  font-weight:bolder;
+}
+
+fieldset{
+  margin-right:0px;
+}
+
+#get-help-form{
+width:900px;
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+}
+
+.field-required{
+  font-style: italic;
+  font-weight: bold;
+  color: #b12b30;
+}
+
+#get-help-form-element{
+  flex-grow:1;
+}
+
+#get-help-form-top-text {
+  width:450px;
+  display:inline-block;
+  align-self:center;
+  font-weight:bold;
+}
+
+#get-help-form-contact-fieldset{
+  display:flex;
+  flex-direction: column;
+  width:350px;
+}
+
+.contact-form-element{
+  display:inline-block;
+  margin:10px;
+}
+
+#get-help-form-helpyou-fieldset{
+display:flex;
+flex-direction:row;
+flex-wrap:nowrap;
+padding:15px;
+margin-top: 30px;
+}
+
+.help_you_element{
+flex-grow:1;
+}
+#get-help-form-helpyou-checklist-fieldset{
+  display:flex;
+  flex-direction: column;
+  width:350px;
+  margin-right:5px;
+}
+
+.checklist-element{
+  display:inline-block;
+}
+
+#get-help-form-helpyou-questionbox-fieldset{
+  display:flex;
+  flex-direction: column;
+  width:350px;
+  margin-top:30px;
+}
+
+#get-help-form textarea{
+  margin-top:20px;
+  padding:10px;
+}
+
+#get-help-form button{
+  margin-top:30px;
+  width:150px;
+  height:80px;
+  font-weight:bolder;
+  font-size:1.5vw;
+}
+
+#button_and_form_error_message{
+  display:flex;
+  flex-direction:column;
+}
+
+#submit_error{
+  font-size:1.0vw;
+}
+
+
+/*****************************************************************************/
 /***  Media queries that enable a responsive website                       ***/
 /*****************************************************************************/
+
 @media screen and (max-width: 599px) {
 
   /* Have to boost text size relative to the screen */
@@ -369,7 +494,6 @@ cite {
     font-family: monospace;
     font-size: 3.5vw;
   }
-
 }
 
 @media screen and (min-width:600px) and (max-width:900px) {
